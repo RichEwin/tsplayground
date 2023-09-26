@@ -92,11 +92,69 @@ const todaysTransactions: Transactions = {
   Job: 10,
 };
 
-console.log(todaysTransactions["Pizza"]);
+// Readonly
+
+interface Person {
+  name: string;
+  age: number;
+}
+
+type ReadonlyPerson = Readonly<Person>;
+
+const person: ReadonlyPerson = {
+  name: "Rich",
+  age: 21,
+};
+
+// Record
+type CountryByPrefix = Record<string, string>;
+
+const countryByPrefix: Record<string, string> = {
+  UnitedKingdom: "UK",
+  Sweden: "SE",
+  America: "USA",
+};
+
+// const countryByPrefix: CountryByPrefix = {
+//   UnitedKingdom: "UK",
+//   Sweden: "SE",
+//   America: "USA",
+// };
+
+// Pick
+interface Car {
+  make: string;
+  model: string;
+  year: number;
+}
+
+type CarModelAndYear = Pick<Car, "model" | "year">;
+
+const myCar: CarModelAndYear = {
+  model: "Volvo",
+  year: 2023,
+};
+
+// Omit
+type CarMake = Omit<Car, "make">;
+
+const myOtherCar: CarMake = {
+  model: "Volvo",
+  year: 2023,
+};
+
+// Partial
+interface Car {
+  make: string;
+  model: string;
+  year: number;
+}
+
+const Car: Partial<Car> = {
+  make: "Volvo",
+};
 
 // Generics
-// Pick
-// Omit
-// Partial
-// Readonly
-// Record
+const identity = <T>(argument: T): T => {
+  return argument;
+};

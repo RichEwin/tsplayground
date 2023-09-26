@@ -43,4 +43,28 @@ var todaysTransactions = {
     Books: 10,
     Job: 10,
 };
-console.log(todaysTransactions[10]);
+var person = {
+    name: "Rich",
+    age: 21,
+};
+var countryByPrefix = {
+    UnitedKingdom: "UK",
+    Sweden: "SE",
+    America: "USA",
+};
+var myCar = {
+    model: "Volvo",
+    year: 2023,
+};
+var myOtherCar = {
+    model: "Volvo",
+    year: 2023,
+};
+var Car = {
+    make: "Volvo",
+};
+// Generics
+var identity = function (argument) {
+    return argument;
+};
+console.log(identity("string"));
