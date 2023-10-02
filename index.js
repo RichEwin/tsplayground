@@ -67,4 +67,7 @@ var Car = {
 var identity = function (argument) {
     return argument;
 };
-console.log(identity("string"));
+var accum = function (s) {
+    console.log(Array(s));
+};
+console.log(accum(12345));
